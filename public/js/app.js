@@ -1,5 +1,5 @@
 //f defines routes
-angular.module('polls',['ngRoute'])
+angular.module('polls',['ngRoute','pollServices'])
 	.config(['$routeProvider',function($routeProvider){
 		$routeProvider.
 			when('/polls',{templateUrl: 'partials/list.html', controller:'PollListCtrl'}).

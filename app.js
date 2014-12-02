@@ -24,9 +24,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(path.join(__dirname, 'bower_components')));
 
-app.use('/', routes);
+app.use('/', routes.index);
 app.use('/users', users);
 
+app.get('/polls/polls', routes.list);
+app.get('/polls/:id', routes.poll);
+app.post('/polls', routes.create);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');

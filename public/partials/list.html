@@ -17,7 +17,7 @@
   <hr>
   </div>
 </div>
-<div class="row" ng-switch on="polls.length">
+<div class="row" ng-switch on="Polls.length">
   <ul ng-switch-when="0">
     <li>
       <em>No Polls in database. Would you like to
@@ -25,7 +25,7 @@
     </li>
   </ul>
   <ul ng-switch-default>
-    <li ng-repeat="poll in polls | filter:query">
+    <li ng-repeat="poll in Polls | filter:query">
       <a href="#/poll/{{poll._id}}">{{poll.question}}</a>
     </li>
   </ul>
